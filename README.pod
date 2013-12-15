@@ -25,10 +25,6 @@ to easily publish files using git.
 
 =head1 INSTALLATION
 
-Apache::GitFileServer
-
-(c) 2013 Adirelle <adirelle@gmail.com>
-
 This module obviously needs Apache2, mod_perl2 and git binaries. It also uses System::Sub and File::MimeInfo.
 
 On Debian Wheezy, you should be able to install them with these commands:
@@ -45,7 +41,7 @@ Here is a sample configuration with all the configuration parameters.
 	# Load the module
 	PerlLoadModule Apache::GitFileServer
 	
-	# Serve file from repositories
+	# Serve files from repositories
 	<Location /pages>
 		SetHandler modperl
 		PerlResponseHandler Apache::GitFileServer
@@ -72,6 +68,8 @@ Even though this module should not consume much ressources, it has not been opti
 It executes "git cat-file" at least once per request and executes a second time to actually serve the file content.
 
 =head1 LICENSE
+
+(c) 2013 Adirelle <adirelle@gmail.com>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
